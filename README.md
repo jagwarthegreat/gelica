@@ -1,3 +1,3 @@
 # gelica
 
-<-- https://rock.rocksolidchurchdemo.com/NewFamily -->
+[comment]: <> (https://rock.rocksolidchurchdemo.com/NewFamily)
