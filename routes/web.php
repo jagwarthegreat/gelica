@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FamiliesController;
+use App\Http\Controllers\GroupsController;
+use App\Http\Controllers\FinancialsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,23 +20,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/families', function () {
-    return view('families');
-})->name('families');
+    Route::group(['prefix' => 'families'], function ($router) {
+        Route::get('/', [FamiliesController::class, 'index'])->name('families');
+    });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/families', function () {
-    return view('families');
-})->name('families');
+    Route::group(['prefix' => 'groups'], function ($router) {
+        Route::get('/', [GroupsController::class, 'index'])->name('groups');
+    });
 
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/groups', function () {
-    return view('groups');
-})->name('groups');
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/financial', function () {
-    return view('financial');
-})->name('financial');
+    Route::group(['prefix' => 'financials'], function ($router) {
+        Route::get('/', [FinancialsController::class, 'index'])->name('financials');
+    });
+});

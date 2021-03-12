@@ -4,9 +4,6 @@
     </div>
 
     <div class="mt-4 text-gray-500">
-        Laravel Jetstream provides a beautiful, robust starting point for your next Laravel application. Laravel is designed
-        to help you build your application using a development environment that is simple, powerful, and enjoyable. We believe
-        you should love expressing your creativity through programming, so we have spent time carefully crafting the Laravel
-        ecosystem to be a breath of fresh air. We hope you love it.
+        Horray! We're thrilled you decided to visit our page! Hats off on making an excellent decision. You are now officially in the right place to know more about churches topics. Going forward, you will learn everything that might catch your interest and change your perspective about your idea in mind.
     </div>
 </div>
