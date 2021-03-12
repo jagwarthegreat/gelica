@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Church;
 
 class ChurchesController extends Controller
 {
@@ -13,7 +14,9 @@ class ChurchesController extends Controller
      */
     public function index()
     {
-        return view('churches/index');
+        // return view('churches/index');
+        $churches = Church::all();
+        return view('churches/index', compact('churches'));
     }
 
     /**

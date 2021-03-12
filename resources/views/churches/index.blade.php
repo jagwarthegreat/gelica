@@ -14,7 +14,16 @@
 					</div>
 
 					<div class="mt-4 text-gray-500">
-						This is the church page
+						@forelse($churches as $church)
+						<div class="col-3 p-2 mb-1" style="border: 1px solid #ddd;border-radius: 4px;">
+							<div class="flex items-center flex-wrap">
+								<img src="{{ url('/images/church_logo.jpg') }}" alt="Images" style="width: 40px; height: 40px;border-radius: 50%;object-fit: cover;">
+								<h1>{{ $church->name }}</h1>
+							</div>
+						</div>
+						@empty
+						<span>No encoded church.</span>
+						@endforelse
 					</div>
 				</div>
 			</div>
