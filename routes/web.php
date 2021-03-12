@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FamiliesController;
 use App\Http\Controllers\GroupsController;
 use App\Http\Controllers\FinancialsController;
+use App\Http\Controllers\ChurchesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,5 +36,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::group(['prefix' => 'financials'], function ($router) {
         Route::get('/', [FinancialsController::class, 'index'])->name('financials');
+    });
+
+    Route::group(['prefix' => 'churches'], function ($router) {
+        Route::get('/', [ChurchesController::class, 'index'])->name('churches');
     });
 });
